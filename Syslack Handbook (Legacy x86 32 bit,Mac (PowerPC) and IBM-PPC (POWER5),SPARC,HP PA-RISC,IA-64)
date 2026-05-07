@@ -1,0 +1,104 @@
+1 Download ISO http://old-releases.ubuntu.com/releases/6.06.0/ Then Select Desktop CD Then Download Which architecture (NOT 64-bit PC AMD64)
+2 Flash The ISO From USB Stick
+3 Then When on installer menu enter Start or install ubuntu
+4 After installation finished reboot and Login To Desktop
+5 Run sudo nano /etc/lsb-release
+  Then change DISTRIB_ID=Ubuntu To DISTRIB_ID=Syslack Linux
+  Then change DISTRIB_RELEASE=6.06 To DISTRIB_RELEASE=1.1
+  Then change DISTRIB_CODENAME=dapper to DISTRIB_CODENAME=viprin
+  Then Change DISTRIB_DESCRIPTION="Ubuntu 6.06.1 LTS" To DISTRIB_DESCRIPTION="Syslack Linux"
+6 Go To Theme Preferences Then Select Clearlooks Instead Of Human
+7 Open sessions then Disable Show splash screen on login then Enable Automatically save changes to session
+8 Run sudo nano /boot/grub/menu.lst then change timeout 3 to 5 then add # on hiddenmenu example # hiddenmenu
+  on End Default Options Change title Ubuntu To Syslack Linux On Every Beginning Even recovery mode and memtest86+ then remove quiet splash
+  never update grub because you don’t actually need to run sudo update-grub since Syslack Linux For Legacy x86 32 bit,Mac (PowerPC) and IBM-PPC (POWER5),SPARC,HP PA-RISC,IA-64 uses grub legacy Which GRUB legacy reads menu.lst directly at boot, so changes take effect immediately.
+9 Run sudo nano /etc/issue then change Ubuntu 6.06.1 LTS \n \l To Syslack Linux \n \l
+  Then change sudo nano /etc/issue.net then change Ubuntu 6.06.1 LTS To Syslack Linux
+10 Run sudo nano /etc/gdm/gdm.conf then add # On GraphicalTheme=Human And remove # On GraphicalThemes=circles/:happygnome Example #GraphicalTheme=Human And GraphicalThemes=circles/:happygnome
+   Ctrl x y enter
+11 Run sudo rm /etc/motd
+12 Go to Sound Preferences then
+   For Choose menu item select Beep
+   For Click on command button select click
+   For Error message Select Siren
+   For informational message select Boing
+13 Edit apt sources using sudo nano /etc/apt/sources.list
+   Then remove Line commented out by installer and Replace existing lines with old-releases URLs
+   Use this template
+
+deb http://old-releases.ubuntu.com/ubuntu dapper main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper main restricted universe multiverse
+
+deb http://old-releases.ubuntu.com/ubuntu dapper-updates main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper-updates main restricted universe multiverse
+
+deb http://old-releases.ubuntu.com/ubuntu dapper-security main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper-security main restricted universe multiverse
+
+deb http://old-releases.ubuntu.com/ubuntu dapper-backports main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper-backports main restricted universe multiverse
+
+Update package lists
+sudo apt-get update
+
+14 Run sudo apt-get install gnome-backgrounds
+   Then select wallpaper you want example GNOME Curves
+
+15 Run sudo apt-get install gnome-audio
+   Then add toggled.wav for Select check box
+   Then add generic.wav for Miscellaneous message
+   Then add question wav for question dialog
+   Then add warning.wav for Warning message
+   Then reboot
+
+16 If you see Replace configuration file /etc/issue.net Click keep immediately
+
+17 If you got on minimal you can run sudo nano ~/.bash_profile then add this
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    exec startx
+fi
+
+Or You can reinstall gdm by running sudo apt-get install gdm
+
+18 If GRUB Reset to default you can change it by running sudo nano /boot/grub/menu.lst then change timeout 3 to 5 then add # on hiddenmenu example # hiddenmenu
+  on End Default Options Change title Ubuntu To Syslack Linux On Every Beginning Even recovery mode and memtest86+ then remove quiet splash
+  never update grub because you don’t actually need to run sudo update-grub since Syslack Linux For Legacy x86 32 bit,Mac (PowerPC) and IBM-PPC (POWER5),SPARC,HP PA-RISC,IA-64 uses grub legacy Which GRUB legacy reads menu.lst directly at boot, so changes take effect immediately.
+
+
+For SPARC HP PA-RISC And IA-64
+
+1 Download ISO http://old-releases.ubuntu.com/releases/6.06.0/ Then Select Server install CD Then Download Which architecture (NOT 64-bit PC AMD64)
+2 Flash The ISO From USB Stick
+3 When on installer menu select Install to the hard disk
+4 Setup ubuntu server 6.06
+5 After installation finished reboot and Login
+6 Run sudo nano /etc/lsb-release
+  Then change DISTRIB_ID=Ubuntu To DISTRIB_ID=Syslack Linux
+  Then change DISTRIB_RELEASE=6.06 To DISTRIB_RELEASE=1.0
+  Remove DISTRUB_CODENAME=dapper
+  Then Change DISTIB_DESCRIPTION="Ubuntu 6.06.1 LTS" To DISTRIB_DESCRIPTION="Syslack Linux"
+7 Run sudo nano /boot/grub/menu.lst then change timeout 3 to 5 then add # on hiddenmenu example # hiddenmenu
+  on End Default Options Change title Ubuntu To Syslack Linux On Every Beginning Even recovery mode and memtest86+ then remove quiet splash
+  never update grub because you don’t actually need to run sudo update-grub since Syslack Linux For Legacy x86 32 bit,Mac (PowerPC) and IBM-PPC (POWER5),SPARC,HP PA-RISC,IA-64 uses grub legacy Which GRUB legacy reads menu.lst directly at boot, so changes take effect immediately.
+8 Run sudo nano /etc/issue then change Ubuntu 6.06.1 LTS \n \l To Syslack Linux \n \l
+  Then change sudo nano /etc/issue.net then change Ubuntu 6.06.1 LTS To Syslack Linux
+9 Run sudo rm /etc/motd then sudo reboot
+10 Edit apt sources using sudo nano /etc/apt/sources.list
+   Then remove Line commented out by installer and Replace existing lines with old-releases URLs
+   Use this template
+
+deb http://old-releases.ubuntu.com/ubuntu dapper main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper main restricted universe multiverse
+
+deb http://old-releases.ubuntu.com/ubuntu dapper-updates main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper-updates main restricted universe multiverse
+
+deb http://old-releases.ubuntu.com/ubuntu dapper-security main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper-security main restricted universe multiverse
+
+deb http://old-releases.ubuntu.com/ubuntu dapper-backports main restricted universe multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu dapper-backports main restricted universe multiverse
+
+Update package lists
+sudo apt-get update
