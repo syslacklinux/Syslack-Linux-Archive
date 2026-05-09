@@ -1,0 +1,34 @@
+1 Download Debian 12 ISO 
+
+For 32 Bit https://cdimage.debian.org/cdimage/archive/12.0.0/i386/iso-cd/
+For Armel https://cdimage.debian.org/cdimage/archive/12.0.0/armel/iso-dvd/
+For MIPS https://cdimage.debian.org/cdimage/archive/12.0.0/mipsel/
+For MIPS 64 Bit https://cdimage.debian.org/cdimage/archive/12.0.0/mips64el/
+
+2 Flash Debian 12 I386
+3 Setup Debian 12 I386
+4 If tasksel select gnome and debian desktop environment deselect it just standard system utilities
+5 Run su - then run apt install sudo then nano /etc/sudoers then add yourusername on User privilege specification
+6 Exit root then run sudo apt update && sudo apt upgrade -y
+7 Run sudo nano /etc/os-release
+  Then Change Debian GNU/Linux 12 (bookworm) To Syslack Linux 1.3 (sunix)
+  Then change Name Debian GNU/Linux To Syslack Linux
+  Then change VERSION_ID 12 to 1.3
+  Then change VERSION 12 (bookworm) to 1.3 (sunix)
+  Then change VERSION_CODENAME bookworm to sunix
+  Change ID=debian to ID=syslack
+  Change the HOME_URL To https://github.com/syslacklinux/Syslack-Linux
+  Change the SUPPORT_URL To https://github.com/syslacklinux/Syslack-Linux/discussions/3
+  Change The BUG_REPORT_URL To https://github.com/syslacklinux/Syslack-Linux/issues/1
+CTRL X Y ENTER
+8 Run sudo nano /etc/issue Then change Debian GNU/Linux 12 \n \l To Syslack Linux 1.3 \n \l
+9 Run sudo nano /etc/issue.net Then change Debian GNU/Linux 12 To Syslack Linux 1.3
+10 Then sudo apt-mark hold base-files
+11 Run sudo apt install links then links https://github.com/syslacklinux/Syslack-Linux Then save the Screenshot From 2026-01-31 16-31-30 Then name it to syslack-logo.png
+12 Then sudo mv /home/yourusername/syslack-logo.png /usr/share/pixmaps then sudo cp /usr/share/pixmaps/syslack-logo.png /usr/share/pixmaps/debian-logo.png
+13 Run sudo nano /etc/os-release then add LOGO=/usr/share/pixmaps/syslack-logo.png
+14 Run sudo nano /etc/default/grub Then Remove Quiet On GRUB_CMDLINE_LINUX_DEFAULT Then On GRUB_DISTRIBUTOR Change To GRUB_DISTRIBUTOR="Syslack"
+   Then sudo update-grub
+15 Run sudo rm /etc/motd
+16 Run sudo apt-mark hold desktop-base
+17 Run sudo apt remove systemd then sudo apt --fix-broken install sudo apt install openrc
