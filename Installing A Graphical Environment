@@ -1,0 +1,57 @@
+You Can Install A Graphical Desktop Environment For Example GNOME KDE Plasma Cinnamon XFCE Mate LXQT LXDE And More Using sudo apt install
+You Can Also Install A Window Manager That Is Customizable Like i3wm swaywm icewm bspwm dwm etc using sudo apt install
+
+For Hyprland You can Use Kool Hyprland
+1. Prepare Your System
+   Update packages:
+   sudo apt update && sudo apt upgrade -y
+   Enable universe repository (needed for Wayland packages):
+   sudo add-apt-repository universe
+   sudo apt update
+2. Install Dependencies
+   Hyprland requires Wayland libraries, wlroots, and build tools:
+   sudo apt install -y build-essential cmake meson ninja-build \
+   pkg-config libwayland-dev libx11-dev libx11-xcb-dev \
+   libxcb1-dev libxcb-composite0-dev libxcb-xfixes0-dev \
+   libxcb-render0-dev libxcb-shape0-dev libxcb-xkb-dev \
+   libxkbcommon-dev libxkbcommon-x11-dev libpixman-1-dev \
+   libegl-dev libgles2-mesa-dev libdrm-dev libgbm-dev \
+   libinput-dev libudev-dev libseat-dev libpam0g-dev \
+   libpipewire-0.3-dev libavutil-dev libavcodec-dev \
+   libavformat-dev libavfilter-dev libswscale-dev \
+   libgtk-3-dev libgtk-4-dev
+
+3. Install Hyprland (KooL Script)
+JaKooLit maintains an Ubuntu‑Hyprland installer that automates setup
+git clone https://github.com/JaKooLit/Ubuntu-Hyprland.git
+cd Ubuntu-Hyprland
+./install.sh
+
+4. Configure Hyprland
+
+    Default config is placed in ~/.config/hypr/.
+
+    You can edit hyprland.conf to adjust:
+
+        Keybindings
+
+        Window gaps and animations
+
+        Monitor layout
+
+    Waybar config is in ~/.config/waybar/.
+
+5. Launch Hyprland
+
+    Log out of your current session.
+
+    At the login manager (GDM, LightDM, etc.), select Hyprland (Wayland).
+
+    If you’re using startx, you can create a .xinitrc with:
+    exec Hyprland
+
+If you want to install unity you can install using sudo apt install ubuntu-unity-desktop
+
+If LightDM Cant Detect Your Desktop Environment I Would Recommend Lightdm gtk greeter this can be confirmed by running sudo apt install lightdm-gtk-greeter
+
+Then Have Fun And Start Using A Graphical Desktop Environment
