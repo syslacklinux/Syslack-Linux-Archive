@@ -1,0 +1,3 @@
+Before You Can Install A Graphical Desktop Environment you must sudo apt-mark unhold desktop-base 
+then you can using sudo tasksel then after finish you might want sudo rm -rf /usr/share/desktop-base then sudo apt-mark hold desktop-base
+Then sudo systemctl enable what display manager you use  sudo systemctl start what display manager you use
