@@ -1,0 +1,86 @@
+These are the list of current releases,oldstable releases,historic releases,and future releases
+The releases codename are actually used from geometry dash players and geometry dash spin-off/expansion example meltdown which is geometry dash spin-off/expansion and Viprin Is a geometry dash player
+The releases might be actuallt X.0-X.999 Then After X.999 Then To X.0 Example 1.0-1.999 After 1.999 Then 2.0-2.999 After 2.999 3.0 And More 
+The Testing or unstable or Development Branch Of Syslack would be anaban since Anaban is a notorious and infamous hacker in the Geometry Dash community who was active around 2016–2018 Example Syslack Linux (Post-stable development Anaban) For the next release
+The Future Releases Are in Anaban Branch so these future releases will be released when Haikal decides they are ready because syslack linux releases follows the philosophy that it will be released "when it is ready.".
+None means there is no codename
+EOL date for both current oldstable release and oldstable release will be added after the next release is released and become current stable release
+
+Historic releases
+(Note: These releases are no longer maintained, supported, or updated with security hotfixes. Continued use is not recommended.)
+
+Version=1.0
+Codename=none
+Release date=April 21 2026
+EOL=May 30 2026
+Based on=Ubuntu 24.04.4 LTS Noble Numbat
+Based on (For Legacy x86 32 bit,Mac (PowerPC) and IBM-PPC (POWER5),SPARC,HP PA-RISC,IA-64)=Ubuntu 6.06.2 LTS
+Status=obsolete release
+Architectures=x86_64 (aka amd64, x64, Intel 64) ARM64 (aka AArch64, ARMv8-A) IBM POWER s390x (aka IBM System/390, z/Architecture) riscv (aka RISC-V) Legacy x86 32 bit (aka 80x86, 8086 family) SPARC HP PA-RISC IA-64 Mac (PowerPC) and IBM-PPC (POWER5)
+New Features=Based On Ubuntu 24.04.4 LTS the first syslack linux version
+
+Version=1.1
+Codename=Viprin
+Release date=April 24 2026
+EOL=May 30 2026
+Based on=Ubuntu 26.04 LTS Resolute Raccoon
+Based on (For Legacy x86 32 bit,Mac (PowerPC) and IBM-PPC (POWER5),SPARC,HP PA-RISC,IA-64)=Ubuntu 6.06.2 LTS
+Status=obsolete release
+Codename announced date=April 24 2026
+Architectures=x86_64 (aka amd64, x64, Intel 64) ARM64 (aka AArch64, ARMv8-A) IBM POWER s390x (aka IBM System/390, z/Architecture) riscv (aka RISC-V) Legacy x86 32 bit (aka 80x86, 8086 family) SPARC HP PA-RISC IA-64 Mac (PowerPC) and IBM-PPC (POWER5)
+New Features=Linux 7.0 kernel Dual-track system for container stacks: traditional with regular major updates, or stable to maintain consistent versions of core components Valkey 9, PostgreSQL 18, MySQL and MariaDB as long-term supported versions, and the introduction of DocumentDB
+
+Version=1.2
+Codename=Zoink
+Release date=May 7 2026
+EOL=May 30 2026
+Based on=Debian 13 Trixie
+Based on For 32 Bit=Debian 12 Bookworm
+Status=obsolete release
+Codename announced date=April 24 2026
+Architectures=Same As Debian 13 And 12
+New Features=Switched Base from ubuntu to Debian
+
+Version=1.3
+Codename=Sunix
+Release date=May 9 2026
+EOL=June 22 2026
+Based on=Debian 13 Trixie
+Based on For 32 Bit=Debian 12 Bookworm
+Status=oldstable release
+Codename announced date=April 24 2026
+Architectures=Same as Debian 13 And 12
+New Features=Changed init system systemd to openrc for EABI ARM,32-bit PC,MIPS little endian,64-bit MIPS little endian
+
+Version=1.4
+Codename=Riot
+Release date=May 9 2026
+EOL=June 22 2026
+Based on=Alpine Linux
+Status=obsolete release
+Codename announced date=April 24 2026
+Architectures=Same As Alpine Linux
+New Features=Switched Base from debian to alpine linux
+
+Current Releases
+
+Version=1.5
+Codename=TriAxis
+Release date=May 25 2026
+EOL=TBA
+Based on=Ubuntu 26.04 LTS Resolute Raccoon
+Based on (For Legacy x86 32 bit,Mac (PowerPC) and IBM-PPC (POWER5),SPARC,HP PA-RISC,IA-64) (1.5-1.5.2)=Ubuntu 6.06.2 LTS
+Based on For Legacy x86 32 bit (i686)=Ubuntu Server 16.04 LTS
+Status=Current stable release
+Codename announced date=April 24 2026
+Architectures=x86_64 (aka amd64, x64, Intel 64) ARM64 (aka AArch64, ARMv8-A) IBM POWER s390x (aka IBM System/390, z/Architecture) riscv (aka RISC-V) Legacy x86 32 bit (aka 80x86, 8086 family) SPARC HP PA-RISC IA-64 Mac (PowerPC) and IBM-PPC (POWER5)
+New Features=Switched Back The Base To Ubuntu
+New Features (Point Release 1.5.1)=added GRUB Background
+New Features (Point Release 1.5.2)=added KDE Plasma
+New Features (Point Release 1.5.3)=the Legacy x86 32 Bit will be raised to Ubuntu Server 16.04 LTS i686 only
+New Features (Point Release 1.5.4)=dropped KDE Plasma due to i686 32 bit KDE Doesnt have a sound so the Syslack will dropping KDE Plasma
+Point Release date 1.5.1 and 1.5.2=June 13 2026
+Point Release date 1.5.3=June 16 2026
+Point Release date 1.5.4=June 17 2026
+
+The next release of Syslack is codenamed "SubZero" no release date has been set the base system is Ubuntu 26.10
