@@ -1,0 +1,79 @@
+1 Download Ubuntu Server Iso https://ubuntu.com/download/server
+2 Create a USB Installation media https://github.com/syslacklinux/Syslack-Linux/blob/main/Creating%20a%20bootable%20USB%20flash%20drive%20with%20an%20image%20writer
+3 Setup Ubuntu Server
+  If you are on Ubuntu archive mirror configuration Change mirror address from http://id.archive.ubuntu.com/ubuntu/ to http://mirror.kku.ac.th/ubuntu/
+4 After installation Run sudo nano /etc/os-release
+   Then change PREETY_NAME="Ubuntu 26.04 LTS" To PREETY_NAME="Syslack Linux"
+   Change NAME="Ubuntu" To NAME="Syslack Linux"
+   Change VERSION="26.04 LTS (Resolute Racoon)" To VERSION="1.5" VERSION_ID="26.04" To VERSION_ID="1.5"
+   Change VERSION_CODENAME=noble To VERSION_CODENAME=triaxis
+   Change ID=ubuntu to ID=syslack
+   Remove ID_LIKE=debian
+   Change HOME_URL="https://ubuntu.com/" To HOME_URL="https://github.com/syslacklinux/Syslack-Linux"
+   Change SUPPORT_URL="https://help.ubuntu.com/" To SUPPORT_URL="https://github.com/syslacklinux/Syslack-Linux/discussions/3"
+   Change BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/" To BUG_REPORT_URL="https://github.com/syslacklinux/Syslack-Linux/issues/1"
+   Remove PRIVACY_POLICY_URL
+   Remove UBUNTU_CODENAME=resolute
+5 Run sudo apt install links
+  then links https://github.com/Haikal02-alt/Syslack-Linux Then find Screenshot from 2026-01-31 16-31-30
+   then Save the Screenshot from 2026-01-31 16-31-30 If You See 543212867-3fb3c0d3-784e-46f0-b862-6fd822089d3e.png Change To syslack-logo.png
+   then run sudo mv /home/yourusername/syslack-logo.png /usr/share/pixmaps
+   then sudo cp /usr/share/pixmaps/syslack-logo.png /usr/share/pixmaps/ubuntu-logo.svg
+     sudo cp /usr/share/pixmaps/syslack-logo.png /usr/share/pixmaps/ubuntu-logo-text.png
+     sudo cp /usr/share/pixmaps/syslack-logo.png /usr/share/pixmaps/ubuntu-logo-text.svg
+     sudo cp /usr/share/pixmaps/syslack-logo.png /usr/share/pixmaps/ubuntu-logo-text-dark.png
+     sudo cp /usr/share/pixmaps/syslack-logo.png /usr/share/pixmaps/ubuntu-logo-text-dark.svg
+     Then sudo nano /etc/os-release
+     Then Change LOGO=ubuntu-logo To LOGO=/usr/share/pixmaps/syslack-logo.png
+     Then ctrl x y enter
+6 The /etc/os-release Resets when base-files updates. to prevent that, you can mark base-files as held sudo apt-mark hold base-files
+7 Remove /etc/update-motd.d with sudo rm -rf /etc/update-motd.d
+8 You May Stop The Services Of Snap
+   sudo systemctl stop snapd
+   sudo systemctl disable snapd
+
+  Purge Snapd (Recommended)
+  sudo apt purge snapd
+
+  Clean Up Leftover Directories
+  rm -rf ~/snap
+  sudo rm -rf /var/snap /var/lib/snapd /var/cache/snapd
+
+  Autoremove
+  sudo apt autoremove
+
+  System Updates: Ubuntu may reinstall Snapd during major upgrades. To prevent this, you can block Snapd from being reinstalled:
+  sudo apt-mark hold snapd
+
+9 run sudo nano /etc/default/grub
+    Change
+    GRUB_TIMEOUT=0 To GRUB_TIMEOUT=5 Then GRUB_TIMEOUT_STYLE=hidden to GRUB_TIMEOUT_STYLE=menu
+    then Change GRUB_DISTRIBUTOR To GRUB_DISTRIBUTOR="Syslack Linux"
+    Ctrl X Y Enter Then sudo update-grub
+
+10 Change Some Ubuntu To Syslack On /etc/issue on sudo nano /etc/issue If You See Ubuntu 26.04 LTS \n \1 Change it To Syslack Linux \n \1
+   Also run sudo nano /etc/issue.net Then Change Ubuntu 26.04 LTS To Syslack Linux
+
+11 links https://github.com/syslacklinux/Syslack-Linux-Archive/blob/main/starfield.png
+   then click starfield.png then save
+   then run sudo mv /home/yourusername/starfield.png /usr/share/pixmaps
+   then run sudo nano /etc/default/grub
+   then add GRUB_BACKGROUND="/usr/share/pixmaps/starfield.png"
+   then sudo update-grub
+
+12 Install memtest86+ (If you are using Legacy BIOS 64 Bit Hardware) sudo apt install memtest86+ -y
+
+13 Run sudo nano /etc/lsb-release then change
+   DISTRIB_ID=Ubuntu
+   DISTRIB_RELEASE=26.04
+   DISTRIB_CODENAME=resolute
+   DISTRIB_DESCRIPTION="Ubuntu 26.04 LTS"
+
+   To
+
+   DISTRIB_ID=Syslack Linux
+   DISTRIB_RELEASE=1.5
+   DISTRIB_CODENAME=triaxis
+   DISTRIB_DESCRIPTION="Syslack Linux"
+
+14 Run sudo apt-mark hold lsb-release
