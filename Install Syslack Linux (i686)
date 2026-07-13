@@ -1,0 +1,83 @@
+Important: Make sure you are on an i686‑class CPU (Pentium Pro or newer). While the ISO is labeled i386, modern packages and kernels require i686 instructions. Attempting to run on i486/i586 will cause crashes or incompatibility.
+
+1 Download 32-bit PC (i386) server install image Server install image https://releases.ubuntu.com/16.04/
+2 On Software Selection leave it standard system utilities and enter
+3 After Install run sudo nano /etc/os-release then Change
+NAME="Ubuntu"
+VERSION="16.04.6 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.6 LTS (Xenial Xerus)"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL"http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+
+To
+
+NAME="Syslack Linux"
+VERSION="1.5"
+ID=syslack
+PRETTY_NAME="Syslack Linux"
+VERSION_ID="1.5"
+HOME_URL="https://github.com/syslacklinux/Syslack-Linux"
+SUPPORT_URL"https://github.com/syslacklinux/Syslack-Linux/discussions/3"
+BUG_REPORT_URL="https://github.com/syslacklinux/Syslack-Linux/issues/1"
+VERSION_CODENAME=triaxis
+
+4 The /etc/os-release Resets when base-files updates. to prevent that, you can mark base-files as held sudo apt-mark hold base-files
+5 Run sudo apt install links
+  then links https://github.com/Haikal02-alt/Syslack-Linux Then find Screenshot from 2026-01-31 16-31-30
+  then Save the Screenshot from 2026-01-31 16-31-30 If You See 543212867-3fb3c0d3-784e-46f0-b862-6fd822089d3e.png Change To syslack-logo.png
+  then run sudo mv /home/yourusername/syslack-logo.png /usr/share/pixmaps
+6 Then sudo nano /etc/os-release and add LOGO=/usr/share/pixmaps/syslack-logo.png
+7 run sudo nano /etc/default/grub then Change GRUB_TIMEOUT=2 To GRUB_TIMEOUT=5
+  Then change GRUB_DISTRIBUTOR='lsb_release -i -s 2> /dev/null || echo Debian' To GRUB_DISTRIBUTOR="Syslack Linux"
+  Then sudo update-grub
+8 You May Stop The Services Of Snap
+   sudo systemctl stop snapd
+   sudo systemctl disable snapd
+
+  Purge Snapd (Recommended)
+  sudo apt purge snapd
+
+  Clean Up Leftover Directories
+  rm -rf ~/snap
+  sudo rm -rf /var/snap /var/lib/snapd /var/cache/snapd
+
+  Autoremove
+  sudo apt autoremove
+
+  System Updates: Ubuntu may reinstall Snapd during major upgrades. To prevent this, you can block Snapd from being reinstalled:
+  sudo apt-mark hold snapd
+
+9 Change Some Ubuntu To Syslack On /etc/issue on sudo nano /etc/issue If You See Ubuntu 16.04 LTS \n \1 Change it To Syslack Linux \n \1
+  Also run sudo nano /etc/issue.net Then Change Ubuntu 16.04 LTS To Syslack Linux
+
+10 Remove /etc/update-motd.d with sudo rm -rf /etc/update-motd.d
+
+11 links https://github.com/syslacklinux/Syslack-Linux-Archive/blob/main/starfield.png
+   then click starfield.png then save
+   then run sudo mv /home/yourusername/starfield.png /usr/share/pixmaps
+   then run sudo nano /etc/default/grub
+   then add GRUB_BACKGROUND="/usr/share/pixmaps/starfield.png"
+   then sudo update-grub
+
+12 Install memtest86+ (If you are using Legacy BIOS 32 Bit Hardware) sudo apt install memtest86+ -y
+
+13 Run sudo nano /etc/lsb-release then change
+   DISTRIB_ID=Ubuntu
+   DISTRIB_RELEASE=16.04
+   DISTRIB_CODENAME=xenial
+   DISTRIB_DESCRIPTION="Ubuntu 16.04.6 LTS"
+
+   To
+
+   DISTRIB_ID=Syslack Linux
+   DISTRIB_RELEASE=1.5
+   DISTRIB_CODENAME=triaxis
+   DISTRIB_DESCRIPTION="Syslack Linux"
+
+14 Run sudo apt-mark hold lsb-release
